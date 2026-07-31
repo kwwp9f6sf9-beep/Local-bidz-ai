@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LocalBiz AI Quote Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      padding: 20px;
+    }
+
+    .box {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #1f4fff;
+      text-align: center;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #1f4fff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    #quote {
+      margin-top: 20px;
+      background: #eef3ff;
+      padding: 15px;
+      border-radius: 10px;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>LocalBiz AI</h1>
+
+<p>Create professional quotes in seconds.</p>
+
+<input id="business" placeholder="Business name">
+
+<input id="customer" placeholder="Customer name">
+
+<textarea id="job" placeholder="Describe the job"></textarea>
+
+<input id="price" placeholder="Price">
+
+<button onclick="makeQuote()">Create Quote</button>
+
+<div id="quote"></div>
+
+</div>
+
+
+<script>
+
+function makeQuote(){
+
+let business = document.getElementById("business").value;
+let customer = document.getElementById("customer").value;
+let job = document.getElementById("job").value;
+let price = document.getElementById("price").value;
+
+
+let result = `
+${business}
+
+QUOTE FOR: ${customer}
+
+Job Description:
+${job}
+
+Estimated Price:
+$${price}
+
+Thank you for choosing ${business}.
+We appreciate your business.
+
+This quote is valid for 30 days.
+`;
+
+document.getElementById("quote").innerText = result;
+
+}
+
+</script>
+
+</body>
+</html>
